@@ -1,8 +1,9 @@
 import vk_api
+import os
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
-TOKEN = "vk1.a.KwWuS-7hhjZpByIZDP-w9tG7GtImMdXty1woNNa0BNcYO1hxY0BeKm49as5F2GjXRHiBZzFiEhhWIIpUWTz0SmcBDm0JGx2RiHSXeVfg-bORkelU1hjhEFCYeyylncno2v3p8wabAJQmbArMGXIko2-1NyQN-no1U98ggNg1mqA10VsANkRA4sHdIc33E6PmzJ0L6uJAgjpPH2gggVSQcQ"
-GROUP_ID = 236862872
+TOKEN = os.getenv('VK_TOKEN')
+GROUP_ID = os.getenv('GROUP_ID')
 
 def main():
     vk_session = vk_api.VkApi(token=TOKEN)
