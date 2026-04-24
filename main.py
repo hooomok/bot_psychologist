@@ -13,11 +13,19 @@ def main():
         if event.type == VkBotEventType.MESSAGE_NEW:
             user_id = event.obj.message['from_id']
             text = event.obj.message['text']
-            vk.messages.send(
+            message_text = text.lower().strip()
+            if message_text == 'начать':
+                vk.messages.send(
+                    user_id=user_id,
+                    message='Привет! Я твой личный психолог, который всегда "в кармане" и очень любит котиков',
+                    random_id=0
+                )
+            else:
+                vk.messages.send(
                 user_id=user_id,
                 message=text,
                 random_id=0
-            )
+                )
 
 if __name__ == "__main__":
     main()
